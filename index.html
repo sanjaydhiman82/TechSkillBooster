@@ -1,25 +1,9 @@
-<h1 style="text-align: center;">Welcome to SkillBooster</h1>
-<table style="margin-left: auto; margin-right: auto; width: 468.4px;">
-<tbody>
-<tr>
-<td style="width: 79px;">
-<h3><span style="color: #800000;"><strong>Presentation</strong></span></h3>
-</td>
-<td style="width: 72px;">
-<h3><span style="color: #800000;"><strong>Middleware</strong></span></h3>
-</td>
-<td style="width: 52px;">
-<h3><span style="color: #800000;"><strong>Backend</strong></span></h3>
-</td>
-<td style="width: 76px;">
-<h3><span style="color: #800000;"><strong>Architecture</strong></span></h3>
-</td>
-<td style="width: 33px;">
-<h3><span style="color: #800000;"><strong>Tools</strong></span></h3>
-</td>
-<td style="width: 117.4px;">
-<h3><span style="color: #800000;"><strong>How to</strong></span></h3>
-</td>
-</tr>
-</tbody>
-</table>
+<h1>Spring Boot</h1>
+<h2><strong>Spring boot Logging</strong></h2>
+<p><strong>#logger information</strong><br />logging.level.org.springframework.web=INFO<br />logging.level.com.techskillbooster.mstemplate.controller=DEBUG<br />logging.level.org.hibernate=ERROR<br />logging.file.name=logs/spring-boot-logging.log<strong><br /></strong></p>
+<p><strong>Usage:</strong></p>
+<p>Logger logger=LoggerFactory.getLogger(CustomerController.class);</p>
+<p>logger.debug("This is a debug message");<br /> logger.info("This is an info message");<br /> logger.warn("This is a warn message");<br /> logger.error("This is an error message");</p>
+<h2>Spring Boot Profile</h2>
+<p>Create application-dev.properties,application-prod.properties</p>
+<p><strong>#Application profile active</strong><br />spring.profiles.active=dev</p>
