@@ -8,6 +8,7 @@
 				<p><strong>Usage:</strong></p>
 				<p>Logger logger=LoggerFactory.getLogger(CustomerController.class);</p>
 				<p>logger.debug("This is a debug message");<br /> logger.info("This is an info message");<br /> logger.warn("This is a warn message");<br /> logger.error("This is an error message");</p>
+				<hr />
 				<h2>Spring Boot Profile</h2>
 				<p>Create application-dev.properties,application-prod.properties</p>
 				<p><strong>#Application profile active</strong><br />spring.profiles.active=dev</p>
@@ -17,6 +18,11 @@
 				<p>@Component<br />@ConfigurationProperties(prefix ="appconfigdata")<br />@PropertySource("classpath:config/appconfigdata.properties")<br /><strong>public class MyApplicationConFig {</strong><br /> private String name;<br /> private String language;<br /> private String framework;<br /> private String server;</p>
 				<p><strong># Application configuration</strong><br />appconfigdata.name=Application<br />appconfigdata.language=java<br />appconfigdata.framework=spring<br />appconfigdata.server=8081</p>
 				<p>@SpringBootApplication<br />@ConfigurationPropertiesScan("com.techskillbooster.mstemplate.settings")<br />public class MstemplateApplication {</p>
+				<hr />
+				<h2>Spring Boot&nbsp;Actuator</h2>
+				<p>&lt;dependency&gt;<br /> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /> &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;<br /> &lt;/dependency&gt;</p>
+				<p><strong># Actuator settings</strong><br />management.security.enabled=true <br />management.security.roles=ADMIN <br />management.endpoints.web.exposure.include=*<br />security.user.name=admin<br />security.user.password=secret</p>
+				<p>/auditevents lists security audit-related events (user login/logout)<br />/logfile list application logs.<br />/loggers query logging level of our application.<br />/metrics details metrics of our application.<br />/beans returns all available beans<br />/conditions, builds a report of conditions around autoconfiguration.<br />/flyway provides Flyway database migrations.<br />/health health status of our application.<br />/heapdump list heap dump from the JVM.<br />/sessions lists HTTP sessions given we are using Spring Session.<br />/shutdown performs a graceful shutdown of the application.<br />/threaddump dumps the thread information of the underlying JVM.<br />/info list general information<br />/configprops list all @ConfigurationProperties beans.<br />/env returns the current environment</p>
 			</td>
 		</tr>
 	</tbody>
