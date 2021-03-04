@@ -12,13 +12,13 @@
 				<h2>Spring Boot Profile</h2>
 				<p>Create application-dev.properties,application-prod.properties</p>
 				<p><strong>#Application profile active</strong><br />spring.profiles.active=dev</p>
-			</td>
-			<td>
+				<hr />
 				<h2>Spring Boot External Configuration</h2>
 				<p>@Component<br />@ConfigurationProperties(prefix ="appconfigdata")<br />@PropertySource("classpath:config/appconfigdata.properties")<br /><strong>public class MyApplicationConFig {</strong><br /> private String name;<br /> private String language;<br /> private String framework;<br /> private String server;</p>
 				<p><strong># Application configuration</strong><br />appconfigdata.name=Application<br />appconfigdata.language=java<br />appconfigdata.framework=spring<br />appconfigdata.server=8081</p>
 				<p>@SpringBootApplication<br />@ConfigurationPropertiesScan("com.techskillbooster.mstemplate.settings")<br />public class MstemplateApplication {</p>
-				<hr />
+			</td>
+			<td>
 				<h2>Spring Boot&nbsp;Actuator</h2>
 				<p>&lt;dependency&gt;<br /> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /> &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;<br /> &lt;/dependency&gt;</p>
 				<p><strong># Actuator settings</strong><br />management.security.enabled=true <br />management.security.roles=ADMIN <br />management.endpoints.web.exposure.include=*<br />security.user.name=admin<br />security.user.password=secret</p>
