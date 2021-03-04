@@ -1,9 +1,23 @@
 <h1>Spring Boot</h1>
-<h2><strong>Spring boot Logging</strong></h2>
-<p><strong>#logger information</strong><br />logging.level.org.springframework.web=INFO<br />logging.level.com.techskillbooster.mstemplate.controller=DEBUG<br />logging.level.org.hibernate=ERROR<br />logging.file.name=logs/spring-boot-logging.log<strong><br /></strong></p>
-<p><strong>Usage:</strong></p>
-<p>Logger logger=LoggerFactory.getLogger(CustomerController.class);</p>
-<p>logger.debug("This is a debug message");<br /> logger.info("This is an info message");<br /> logger.warn("This is a warn message");<br /> logger.error("This is an error message");</p>
-<h2>Spring Boot Profile</h2>
-<p>Create application-dev.properties,application-prod.properties</p>
-<p><strong>#Application profile active</strong><br />spring.profiles.active=dev</p>
+<table width="1030">
+	<tbody>
+		<tr>
+			<td>
+				<h2><strong>Spring boot Logging</strong></h2>
+				<p><strong>#logger information</strong><br />logging.level.org.springframework.web=INFO<br />logging.level.com.techskillbooster.mstemplate.controller=DEBUG<br />logging.level.org.hibernate=ERROR<br />logging.file.name=logs/spring-boot-logging.log<strong><br /></strong></p>
+				<p><strong>Usage:</strong></p>
+				<p>Logger logger=LoggerFactory.getLogger(CustomerController.class);</p>
+				<p>logger.debug("This is a debug message");<br /> logger.info("This is an info message");<br /> logger.warn("This is a warn message");<br /> logger.error("This is an error message");</p>
+				<h2>Spring Boot Profile</h2>
+				<p>Create application-dev.properties,application-prod.properties</p>
+				<p><strong>#Application profile active</strong><br />spring.profiles.active=dev</p>
+			</td>
+			<td>
+				<h2>Spring Boot External Configuration</h2>
+				<p>@Component<br />@ConfigurationProperties(prefix ="appconfigdata")<br />@PropertySource("classpath:config/appconfigdata.properties")<br /><strong>public class MyApplicationConFig {</strong><br /> private String name;<br /> private String language;<br /> private String framework;<br /> private String server;</p>
+				<p><strong># Application configuration</strong><br />appconfigdata.name=Application<br />appconfigdata.language=java<br />appconfigdata.framework=spring<br />appconfigdata.server=8081</p>
+				<p>@SpringBootApplication<br />@ConfigurationPropertiesScan("com.techskillbooster.mstemplate.settings")<br />public class MstemplateApplication {</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
