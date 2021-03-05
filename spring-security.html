@@ -1,0 +1,24 @@
+<h1>Spring&nbsp;Security</h1>
+<table style="width: 1042px;">
+	<tbody>
+		<tr>
+			<td style="width: 540.6px;">
+				<p><strong>#Add dependency</strong><br />&lt;dependency&gt;<br /> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br /> &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;<br /> &lt;/dependency&gt;</p>
+				<p><strong>Create Domin :</strong></p>
+				<p>@Entity<br />@Table(name = "users")<br />public class Customer implements UserDetails</p>
+				<p>implement methods of user detail</p>
+				<p><strong>Create Service</strong></p>
+				<p>@Service<br />public class CustomerService implements UserDetailsService{<br /> @Autowired<br /> private CustomerRepo customerRepo;</p>
+				<p>@Override<br /> <strong>public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException</strong> {<br /> return (UserDetails)customerRepo.getUserByUsername(username);<br /> }</p>
+				<hr /></td>
+			<td style="width: 486.4px;">
+				<p>1) Extend&nbsp;<strong>WebSecurityConfigurerAdapter</strong></p>
+				<p>@Configuration<br />@EnableWebSecurity<br />public class AppConfiguration extends <strong>WebSecurityConfigurerAdapter</strong>{</p>
+				<p>2) <strong>override configure method</strong></p>
+				<p>protected void configure(AuthenticationManagerBuilder authBuilder) throws Exception {<br /> super.configure(authBuilder.authenticationProvider(daoAuthProvider()));<br /> }</p>
+				<p>3) <strong>Provide password encoder and user detail service to AuthProvide</strong></p>
+				<p>@Bean<br /> DaoAuthenticationProvider daoAuthProvider() {<br /> DaoAuthenticationProvider provider=new DaoAuthenticationProvider();<br /> provider.setPasswordEncoder(<strong>passwordEncoder</strong>());<br /> provider.setUserDetailsService(<strong>userDetailsService</strong>);<br /> return provider;<br /> }</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
